@@ -12,7 +12,7 @@
     <link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/default/app.min.css') }}" rel="stylesheet" />
     <!-- ================== END core-css ================== -->
-   
+
 </head>
 
 <body class='pace-top'>

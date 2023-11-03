@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Business\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::get('dashboard/user/booking', [BusinessController::class,'userBooking'])->name('business.dashboard.user.booking');
+    Route::get('dashboard/user/booking/details', [BusinessController::class,'userBookingDetails'])->name('business.dashboard.user.booking.details');
 });
 
 require __DIR__.'/auth.php';
