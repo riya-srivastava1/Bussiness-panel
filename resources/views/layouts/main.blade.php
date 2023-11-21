@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Color Admin | Login</title>
+    <title>BDM Panel | Login</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -12,7 +12,7 @@
     <link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/default/app.min.css') }}" rel="stylesheet" />
     <!-- ================== END core-css ================== -->
-   
+
 </head>
 
 <body class='pace-top'>
@@ -58,15 +58,27 @@
 
     </div>
     <!-- END #app -->
-
-    <!-- ================== BEGIN core-js ================== -->
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
-    <!-- ================== END core-js ================== -->
     <!-- BEGIN scroll-top-btn -->
     <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i
             class="fa fa-angle-up"></i></a>
     <!-- END scroll-top-btn -->
+
+    <!-- ================== BEGIN core-js ================== -->
+    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
+    <script src="{{ asset('assets/js/app.min.js') }}"></script>
+
+    <script>
+        // Wait for the document to be ready
+        $(document).ready(function() {
+            if ($('.status-msg').css('display') == 'block') {
+                setTimeout(function() {
+                    $('.status-msg').hide();
+                }, 3000);
+            }
+        });
+    </script>
+
+    <!-- ================== END core-js ================== -->
 </body>
 
 

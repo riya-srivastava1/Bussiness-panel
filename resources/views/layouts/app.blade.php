@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Admin Theme</title>
+    <title>BDM Panel</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -11,8 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/default/app.min.css') }}" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- ================== END core-css ================== -->   
+    <!--=================== for toaster ================== -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!--=================== for toaster ================== -->
+
 </head>
 
 <body>
@@ -25,34 +29,72 @@
     <!-- BEGIN #app -->
     <div id="app" class="app app-header-fixed app-sidebar-fixed">
 
-
-
-        <!-- BEGIN #header -->
         @include('layouts.includes.header')
-        <!-- END #header -->
-
-        {{-- !!Side Bar --}}
         @include('layouts.includes.sidebar')
-        {{-- Side Bar --}}
-    </div>
-    <div class="app-sidebar-bg"></div>
-    <div class="app-sidebar-mobile-backdrop">
-        <a href="javascript:;" data-dismiss="app-sidebar-mobile" class="stretched-link"></a>
-    </div>
-    <!-- END #sidebar -->
-    @yield('content')
+
+        @yield('content')
+
+        <!-- BEGIN scroll-top-btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top"
+            data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        <!-- END scroll-top-btn -->
     </div>
     <!-- END #app -->
+    @yield('scripts')
+
+
+    {{-- <script>
+        @if (Session::has('message'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.success("{{ session('message') }}");
+        @endif
+
+        @if (Session::has('success'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.success("{{ session('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.info("{{ session('info') }}");
+        @endif
+
+        @if (Session::has('warning'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.warning("{{ session('warning') }}");
+        @endif
+    </script> --}}
+
 
     <!-- ================== BEGIN core-js ================== -->
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
     <!-- ================== END core-js ================== -->
+
     <!-- ================== BEGIN page-js ================== -->
-    <script src="{{ asset('assets/plugins/parsleyjs/dist/parsley.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/@highlightjs/cdn-assets/highlight.min.js') }}"></script>
     <script src="{{ asset('assets/js/demo/render.highlight.js') }}"></script>
-    <!-- ================== END page-js ================== --->
+    <!-- ================== END page-js ================== -->
 
 </body>
 

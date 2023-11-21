@@ -36,7 +36,7 @@ return [
     'connections' => [
         'mongodb' => [
             'driver' => 'mongodb',
-            'database' => 'newAdmintemp',
+            'database' => 'zoyleezadmin',
             'dsn' => 'mongodb+srv://prishebeauty:hexa-dev-pass@cluster0.byaspmb.mongodb.net/?ssl=true&authSource=admin&retryWrites=true&w=majority',
         ],
 

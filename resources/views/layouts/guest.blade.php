@@ -10,8 +10,8 @@
 
     <!-- ================== BEGIN core-css ================== -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
-    <link href="../assets/css/default/app.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/default/app.min.css') }}" rel="stylesheet" />
     <!-- ================== END core-css ================== -->
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -34,7 +34,7 @@
                 <div class="login-header">
                     <div class="brand">
                         <div class="d-flex align-items-center">
-                            <span class="logo"></span> <b>Admin</b> Theme
+                            <span class="logo"></span> <b>BDM</b> Panel
                         </div>
                     </div>
                 </div>
@@ -43,10 +43,7 @@
                 <div class="login-body">
                     <!-- BEGIN login-content -->
                     <div class="login-content fs-13px">
-
                         {{ $slot }}
-
-
                     </div>
                     <!-- END login-content -->
                 </div>

@@ -194,6 +194,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        // 'Jenssegers\Mongodb\Session\SessionServiceProvider',
+        // App\Providers\HelperServiceProvider::class,
+        // Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -211,5 +215,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
+
+    'cdn_enabled'   => true,
+    'cdn_domain'    => 'ik.imagekit.io/zoyimg',
+    'cdn_protocol'  => 'https',
 
 ];
