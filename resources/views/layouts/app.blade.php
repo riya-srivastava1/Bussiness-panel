@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>BDM Panel</title>
+    <title>Business Panel</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -11,11 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/default/app.min.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('zoy-asset/css/bootstrap.min.css') }}" rel="stylesheet" /> --}}
     <!--=================== for toaster ================== -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <!--=================== for toaster ================== -->
+
+    @yield('styles')
 
 </head>
 
@@ -33,6 +36,7 @@
         @include('layouts.includes.sidebar')
 
         @yield('content')
+
 
         <!-- BEGIN scroll-top-btn -->
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top"

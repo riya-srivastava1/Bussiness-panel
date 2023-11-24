@@ -12,8 +12,9 @@
     }
     </style>
 @endsection
-@section('dashboard-time-manage-tab','selected')
-@php $data = Auth::guard('business')->user();
+{{-- @section('dashboard-time-manage-tab','selected') --}}
+@php
+$data = Auth::guard('business')->user();
 @endphp
 
 
@@ -30,11 +31,10 @@
 @endphp
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('zoy-asset/css/bootstrap.min.css') }}">
 
 <!-- BEGIN .main-content -->
-<div class="main-content">
-    <!-- Row start -->
-    <div class="row gutters">
+<div id="content" class="app-content">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="card bg-white">
                 <div class="card-header">Manage Date and Time
@@ -105,7 +105,6 @@
     </div>
     <!-- Row end -->
 
-</div>
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -156,6 +155,7 @@
 @endsection
 
 @section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $("#loading-wrapper").show();
     var base_url = $('meta[name="base_url"]').attr('content');

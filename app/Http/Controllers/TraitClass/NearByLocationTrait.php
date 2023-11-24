@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\TraitClass;
 
-use App\NearByLocation;
 use Exception;
 use Illuminate\Http\Request;
+use App\Models\NearByLocation;
 use Illuminate\Support\Facades\Storage;
 
 trait NearByLocationTrait

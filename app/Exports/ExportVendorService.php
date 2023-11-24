@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\User;
+use App\Models\User;
 use App\VendorService;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;

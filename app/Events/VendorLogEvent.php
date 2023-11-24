@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\VendorLogActivity;
+use App\Models\VendorLogActivity;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -25,12 +25,12 @@ class VendorLogEvent
         $this->data = $data;
         // print_r($data);
         // echo $data['vendor_id']."<br/>".$data['data'];
-        $vendor_id = $data['vendor_id']; 
+        $vendor_id = $data['vendor_id'];
         $data = $data['data'];
         if($vendor_id!==null){
             VendorLogActivity::create(['vendor_id'=>$vendor_id,'msg'=>$data]);
         }
-       
+
     }
 
     /**

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Exception;
-use DataTables;
-use App\Models\Business;
 use App\Models\Category;
 use App\Models\SubService;
 use App\Models\ServiceType;
@@ -13,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\VendorProfile;
 use App\Models\VendorService;
 use App\Events\VendorLogEvent;
+use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;

@@ -36,14 +36,14 @@ return [
     */
 
     'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
         'business' => [
             'driver' => 'session',
             'provider' => 'business',
         ],
-        // 'business' => [
-        //     'driver' => 'session',
-        //     'provider' => 'business',
-        // ],
 
         'api' => [
             'driver' => 'token',
@@ -70,10 +70,10 @@ return [
     */
 
     'providers' => [
-        // 'users' => [
-        //     'driver' => 'eloquent',
-        //     'model' => App\Models\Business::class,
-        // ],
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Business::class,
+        ],
         'business' => [
             'driver' => 'eloquent',
             'model' => App\Models\Business::class,
@@ -101,11 +101,11 @@ return [
     */
 
     'passwords' => [
-        // 'users' => [
-        //     'provider' => 'users',
-        //     'table' => 'password_resets',
-        //     'expire' => 60,
-        // ],
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
         'business' => [
             'provider' => 'business',
             'table' => 'password_resets',
@@ -125,6 +125,6 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    // 'password_timeout' => 10800,
 
 ];

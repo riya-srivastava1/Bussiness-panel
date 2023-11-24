@@ -2,11 +2,11 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>Color Admin | Register v3</title>
+	<title>Business Panel | Register v3</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN core-css ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="{{ asset('assets/css/vendor.min.css') }}" rel="stylesheet" />
@@ -19,7 +19,7 @@
 		<span class="spinner"></span>
 	</div>
 	<!-- END #loader -->
-	
+
 
 	<!-- BEGIN #app -->
 	<div id="app" class="app">
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<!-- END news-feed -->
-			
+
 			<!-- BEGIN register-container -->
 			<div class="register-container">
 				<!-- BEGIN register-header -->
@@ -45,7 +45,7 @@
 					<small class="d-block fs-15px lh-16">Create your Color Admin Account. It’s free and always will be.</small>
 				</div>
 				<!-- END register-header -->
-				
+
 				<!-- BEGIN register-content -->
 				<div class="register-content">
                       <form method="POST" action="{{ route('register') }}">
@@ -83,7 +83,7 @@
 							<input type="password" class="form-control fs-13px" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password"/>
 						    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>
-                        
+
 						<div class="form-check mb-4">
 							<input class="form-check-input" type="checkbox" value="" id="agreementCheckbox" />
 							<label class="form-check-label" for="agreementCheckbox">
@@ -106,14 +106,14 @@
 			</div>
 			<!-- END register-container -->
 		</div>
-		<!-- END register -->		
-		
+		<!-- END register -->
+
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
 	</div>
 	<!-- END #app -->
-	
+
 	<!-- ================== BEGIN core-js ================== -->
 	<script src=" {{asset('assets/js/vendor.min.js')}}"></script>
 	<script src="{{asset('assets/js/app.min.js')}}"></script>

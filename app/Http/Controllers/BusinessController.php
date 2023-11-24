@@ -12,11 +12,14 @@ use App\Models\DisabledDate;
 use Illuminate\Http\Request;
 use App\Models\ManageMktCity;
 use App\Models\VendorProfile;
+use App\Models\VendorStylist;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\BusinessNotification;
 use Illuminate\Support\Facades\Auth;
 use App\Events\CloseBookingNotificationEvent;
 use App\Http\Controllers\TraitClass\SMSTrait;
+use App\Models\VendorConfirmationNotification;
 use App\Events\ResponseBookingNotificationEvent;
 use App\Http\Controllers\NotificationTraitBusiness;
 
@@ -31,7 +34,7 @@ class BusinessController extends Controller
     }
     public function testNotification()
     {
-        return $this->sendSimpleMsg('8127752685', 'Testing');
+        // return $this->sendSimpleMsg('8127752685', 'Testing');
         $device_token = "fERP-YwQQnia4ViBXQXPpR:APA91bGx07hmATdl1CJ0phzmgwS6McbTdWURwqWbdABfRI0IsVpABQugK9tHq4UxscupDNgmHT7XNZcMtZQ3mCe2XZqTJUuXcMMHyE49EY1EfPNpazoi14lNvQnYzv0XzKXPwQPOmsQK";
         $title = "Confirmation";
         $body = "The time slot has been reserved for you. Kindly complete the payment for booking confirmation.";
@@ -296,7 +299,7 @@ class BusinessController extends Controller
     {
         $vendor_id = Auth::guard('business')->user()->vendor_id;
         $stylists = VendorStylist::where('vendor_id', $vendor_id)->get();
-        return view('dashboard.add-manage-artists', compact('stylists'));
+        return view('business.dashboard.add-manage-artists', compact('stylists'));
     }
 
     public function userBooking(Request $request)
@@ -402,9 +405,8 @@ class BusinessController extends Controller
         if ($v) {
             $vendorAmenity = Arr::pluck($v, 'name');
         }
-        return view('dashboard.amenities', compact(['amenity', 'vendorAmenity']));
+        return view('business.dashboard.amenities', compact(['amenity', 'vendorAmenity']));
     }
-
 
     public function logout(Request $request)
     {

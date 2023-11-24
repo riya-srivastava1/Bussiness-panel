@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>BDM Panel | Login</title>
+    <title>Business Panel | Login</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -31,7 +31,7 @@
                 <div class="login-header">
                     <div class="brand">
                         <div class="d-flex align-items-center">
-                            <span class="logo"></span> <b>Color</b> Admin
+                            <span class="logo"></span> <b>Business</b> Panel
                         </div>
                         <small>Bootstrap 5 Responsive Admin Template</small>
                     </div>

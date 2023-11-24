@@ -8,32 +8,27 @@
         .table td {
             font-size: 13px;
         }
-
     </style>
 @endsection
 
 @section('content')
-
-    <!-- BEGIN .main-content -->
-    <div class="main-content">
-        <!-- Row start -->
-        <div class="row gutters">
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="card bg-white">
-                    <div class="card-header">Services
+    <div id="content" class="app-content">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card bg-white">
+                <div class="card-header">Services
 
 
-                        @if (empty($edit_permission) || $edit_permission == 'Write')
-                            <a href="{{ route('export.vendor.service') }}"
-                                class="btn btn-info ml-3 btn-sm rounded">Download Services</a>
-                            <span class="float-right">
-                                <a href="{{ route('vendor.service.create') }}" class="btn btn-success">Add Services</a>
-                            </span>
-                        @endif
+                    @if (empty($edit_permission) || $edit_permission == 'Write')
+                        <a href="{{ route('export.vendor.service') }}" class="btn btn-info ml-3 btn-sm rounded">Download
+                            Services</a>
+                        <span class="float-right">
+                            <a href="{{ route('vendor.service.create') }}" class="btn btn-success">Add Services</a>
+                        </span>
+                    @endif
 
-                    </div>
-                    <div class="card-body">
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
                         <table class="table table-bordered text-center" id="vendorservices_table">
                             <thead>
                                 <tr>
@@ -57,35 +52,33 @@
                 </div>
             </div>
         </div>
-        <!-- Row end -->
-    </div>
-    <!-- END: .main-content -->
 
 
-    <div class="modal" id="confirmModal">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header custom-heading">
-                    <h4 class="modal-title text-white">Confirmation</h4>
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <h5 style="margin:0;text-align: center">Are you sure you want to remove this data?</h5>
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <div class="modal" id="confirmModal">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header custom-heading">
+                        <h4 class="modal-title text-white">Confirmation</h4>
+                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <h5 style="margin:0;text-align: center">Are you sure you want to remove this data?</h5>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
 
-
 @section('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('zoy-asset/vendor/datatables/dataTables.min.js') }}"></script>
     <script src="{{ asset('zoy-asset/vendor/datatables/dataTables.bootstrap.min.js') }}"></script>
 
