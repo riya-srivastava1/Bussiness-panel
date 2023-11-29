@@ -20,75 +20,75 @@
 
 @section('content')
     <div id="content" class="app-content">
-
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-
-                    <div class="card bg-white">
-                        <div class="card-header">
-                            <div style="height: 50px my-auto"><span class="float-left" style="line-height: 50px"> My Account
-                                    Details</span>
-                            </div>
-                            <img src="{{ cdn($data->vendor_profile->banner) }}" alt="profile img" class="float-right"
-                                height="50" />
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="card bg-white">
+                    <div class="card-header">
+                        <div style="height: 50px my-auto"><span class="float-left" style="line-height: 50px"> My Account
+                                Details</span>
                         </div>
-                        <div class="card-body">
-                            <div class="nav-tabs-container">
-                                <ul class="nav nav-tabs nav-justified" id="myTab5" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->get('type') === 'profile' || request()->get('type') == null ? 'active' : '' }}"
-                                            id="profile-tab5" data-toggle="tab" href="#profile5" role="tab"
-                                            aria-controls="home5" aria-selected="true">Profile </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->get('type') === 'address' ? 'active' : '' }}"
-                                            id="address-tab5" data-toggle="tab" href="#address5" role="tab"
-                                            aria-controls="address5" aria-selected="true">Address</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->get('type') === 'bank' ? 'active' : '' }}"
-                                            id="bank-tab5" data-toggle="tab" href="#bank5" role="tab"
-                                            aria-controls="profile5" aria-selected="false">Bank</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->get('type') === 'document' ? 'active' : '' }}"
-                                            id="documents-tab5" data-toggle="tab" href="#document5" role="tab"
-                                            aria-controls="contact5" aria-selected="false">Documents</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="myTabContent5">
-                                    <div class="tab-pane fade {{ request()->get('type') === 'profile' || request()->get('type') == null ? 'active show' : '' }}"
-                                        id="profile5" role="tabpanel" aria-labelledby="home-tab5">
-                                        @include('dashboard.profile-components.basic-info')
-                                    </div>
+                        <img src="{{ cdn($data->vendor_profile->banner) }}" alt="profile img" class="float-right"
+                            height="50" />
+                    </div>
+                    <div class="card-body">
+                        <div class="nav-tabs-container">
+                            <ul class="nav nav-tabs nav-justified" id="myTab5" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->get('type') === 'profile' || request()->get('type') == null ? 'active' : '' }}"
+                                        id="profile-tab5" data-toggle="tab" href="#profile5" role="tab"
+                                        aria-controls="home5" aria-selected="true">Profile </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->get('type') === 'address' ? 'active' : '' }}"
+                                        id="address-tab5" data-toggle="tab" href="#address5" role="tab"
+                                        aria-controls="address5" aria-selected="true">Address</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->get('type') === 'bank' ? 'active' : '' }}"
+                                        id="bank-tab5" data-toggle="tab" href="#bank5" role="tab"
+                                        aria-controls="profile5" aria-selected="false">Bank</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->get('type') === 'document' ? 'active' : '' }}"
+                                        id="documents-tab5" data-toggle="tab" href="#document5" role="tab"
+                                        aria-controls="contact5" aria-selected="false">Documents</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent5">
+                                <div class="tab-pane fade {{ request()->get('type') === 'profile' || request()->get('type') == null ? 'active show' : '' }}"
+                                    id="profile5" role="tabpanel" aria-labelledby="home-tab5">
+                                    @include('dashboard.profile-components.basic-info')
+                                </div>
 
-                                    <div class="tab-pane fade {{ request()->get('type') === 'address' ? 'show active' : '' }} "
-                                        id="address5" role="tabpanel" aria-labelledby="address-tab5">
-                                        @include('dashboard.profile-components.address-info')
-                                    </div>
+                                <div class="tab-pane fade {{ request()->get('type') === 'address' ? 'show active' : '' }} "
+                                    id="address5" role="tabpanel" aria-labelledby="address-tab5">
+                                    @include('dashboard.profile-components.address-info')
+                                </div>
 
-                                    <div class="tab-pane fade {{ request()->get('type') === 'bank' ? 'show active' : '' }}"
-                                        id="bank5" role="tabpanel" aria-labelledby="profile-tab5">
-                                        @include('dashboard.profile-components.bank-info')
-                                    </div>
-                                    <div class="tab-pane fade {{ request()->get('type') === 'document' ? 'show active' : '' }}"
-                                        id="document5" role="tabpanel" aria-labelledby="contact-tab5">
-                                        @include('dashboard.profile-components.document-info')
-                                    </div>
+                                <div class="tab-pane fade {{ request()->get('type') === 'bank' ? 'show active' : '' }}"
+                                    id="bank5" role="tabpanel" aria-labelledby="profile-tab5">
+                                    @include('dashboard.profile-components.bank-info')
+                                </div>
+                                <div class="tab-pane fade {{ request()->get('type') === 'document' ? 'show active' : '' }}"
+                                    id="document5" role="tabpanel" aria-labelledby="contact-tab5">
+                                    @include('dashboard.profile-components.document-info')
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>{{-- End Of COL --}}
-            </div>{{-- End Of Row Start --}}
+                </div>
+            </div>{{-- End Of COL --}}
+        </div>{{-- End Of Row Start --}}
 
     </div>
 @endsection
 @section('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('zoy-asset/vendor/bs-select/bs-select.min.js') }}"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3tBEtsH0JPA8Hh-lbBphyfgZM5KY0Hko&libraries=places&callback=initMap"
         async defer></script>
+        <script src="{{ asset('zoy-asset/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
     <script>
         $('#profile-city').val('{{ $vendor->city }}');

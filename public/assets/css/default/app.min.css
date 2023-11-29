@@ -1,3 +1,5 @@
+
+
 @charset "UTF-8";
 
 /*!
@@ -8186,7 +8188,8 @@ fieldset:disabled .btn {
 
 .badge {
     display: inline-block;
-    padding: .35em .65em;
+    /* padding: .35em .65em; */
+    padding: 0.4em 1em;
     font-size: .75em;
     font-weight: 600;
     line-height: 1;
@@ -18188,6 +18191,7 @@ a:focus {
     margin-left: 220px;
     padding: 20px 30px;
     /* background: #f0f4f9; */
+    background-color: var(--bs-body-bg);
 }
 
 .app-content .app-content-container {
@@ -18403,7 +18407,8 @@ a:focus {
     flex-direction: row;
     flex: 1;
     justify-content: flex-end;
-    align-items: center
+    align-items: center;
+    box-shadow: 0 8px 6px -6px grey;
 }
 
 @media (max-width:767.98px) {
@@ -43036,9 +43041,10 @@ a.editable-click:hover {
     background-color: #000000;
 }
 
+
 .badge-bdr,
 .badge-bdr-pill {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .badge-bdr.badge-bdr-pill,
@@ -43082,7 +43088,7 @@ a.editable-click:hover {
 .badge-bdr-pill.badge-info {
     color: #0176bd;
     border: 1px solid #0176bd;
-    background: #f0f4f9;
+    /* background: #f0f4f9; */
 }
 
 .badge-bdr.badge-dark,
@@ -43360,66 +43366,66 @@ a.editable-click:hover {
 
 
 .color-palette ul {
-    margin : 0;
+    margin: 0;
     padding: 0;
 }
 
 .color-palette li {
-    list-style  : none;
-    float       : left;
-    font-size   : 12px;
+    list-style: none;
+    float: left;
+    font-size: 12px;
     margin-right: 10px;
 }
 
 .color-palette li .current {
-    width           : 15px;
-    height          : 15px;
+    width: 15px;
+    height: 15px;
     background-color: #a610a8;
-    display         : flex;
-    flex            : row;
-    float           : left;
-    margin-top      : 1px;
-    margin-right    : 5px;
+    display: flex;
+    flex: row;
+    float: left;
+    margin-top: 1px;
+    margin-right: 5px;
 }
 
 .color-palette li .active {
-    width           : 15px;
-    height          : 15px;
+    width: 15px;
+    height: 15px;
     background-color: #2faf75;
-    display         : flex;
-    flex            : row;
-    float           : left;
-    margin-top      : 1px;
-    margin-right    : 5px;
+    display: flex;
+    flex: row;
+    float: left;
+    margin-top: 1px;
+    margin-right: 5px;
 }
 
 .color-palette li .disable {
-    width           : 15px;
-    height          : 15px;
+    width: 15px;
+    height: 15px;
     background-color: #b0adb0;
-    display         : flex;
-    flex            : row;
-    float           : left;
-    margin-top      : 1px;
-    margin-right    : 5px;
+    display: flex;
+    flex: row;
+    float: left;
+    margin-top: 1px;
+    margin-right: 5px;
 }
 
 .color-palette li .time {
-    width           : 15px;
-    height          : 15px;
+    width: 15px;
+    height: 15px;
     background-color: #04a9b3;
-    display         : flex;
-    flex            : row;
-    float           : left;
-    margin-top      : 1px;
-    margin-right    : 5px;
+    display: flex;
+    flex: row;
+    float: left;
+    margin-top: 1px;
+    margin-right: 5px;
 }
 
 .color-red {
-    width           : 2px;
-    height          : 2px;
+    width: 2px;
+    height: 2px;
     background-color: red;
-    display         : block;
+    display: block;
 }
 
 
@@ -43432,25 +43438,25 @@ a.editable-click:hover {
 
 .date-tab button,
 .time-tab button {
-    padding      : 10px;
-    margin       : 5px;
+    padding: 10px;
+    margin: 5px;
     border-radius: 50rem;
 }
 
 .dateButton {
     background-color: #2faf75;
-    margin          : 5px;
-    border          : none;
-    border          : 1px solid #d1d1d1;
-    color           : #fff;
-    border-radius   : 5px;
+    margin: 5px;
+    border: none;
+    border: 1px solid #d1d1d1;
+    color: #fff;
+    border-radius: 5px;
 }
 
 .dateButton:hover {
     background-color: #a610a8;
-    color           : #fff;
-    border          : 1px solid #d1d1d1;
-    transition      : 0.2s;
+    color: #fff;
+    border: 1px solid #d1d1d1;
+    transition: 0.2s;
 }
 
 .dateButton.active {
@@ -43459,17 +43465,19 @@ a.editable-click:hover {
 
 .timeButton {
     background-color: #2faf75;
-    width           : 90px;
-    margin          : 5px;
-    border          : none;
-    border          : 1px solid #d1d1d1;
-    color           : #fff;
-    border-radius   : 5px;
+    width: 90px;
+    margin: 5px;
+    border: none;
+    border: 1px solid #d1d1d1;
+    color: #fff;
+    border-radius: 5px;
 }
 
 .timeButton:hover {
     background-color: #a610a8;
-    color           : #fff;
-    border          : 1px solid #d1d1d1;
-    transition      : 0.2s;
+    color: #fff;
+    border: 1px solid #d1d1d1;
+    transition: 0.2s;
 }
+
+

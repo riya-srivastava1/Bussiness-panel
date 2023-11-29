@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('dashboard-user-booking-tab', 'selected')
-@php $data = Auth::guard('business')->user();
+@php
+    $data = Auth::guard('business')->user();
 @endphp
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('zoy-asset/vendor/bs-select/bs-select.css') }}" />
     <link rel="stylesheet" href="{{ asset('zoy-asset/css/bootstrap.min.css') }}" />
-
 
     <style>
         .booking-list-cancelled {
@@ -32,9 +32,6 @@
 @section('content')
     <div id="content" class="app-content">
         <!-- BEGIN breadcrumb -->
-        {{-- <ol class="breadcrumb float-xl-end">
-            <li class="breadcrumb-item">Home</li>
-        </ol> --}}
         <!-- END breadcrumb -->
         <h3 class=" page-header">Dashboard</h3>
         <!-- BEGIN row -->
@@ -140,9 +137,9 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    {{-- <div class="form-row">
-                                        {{ $pendingBooking->appends($_GET)->links() }}
-                                    </div> --}}
+                                    <div class="d-flex justify-content-center">
+                                        {{ $pendingBooking->links('pagination::bootstrap-4') }}
+                                    </div>
                                 @endif
 
                             </div>

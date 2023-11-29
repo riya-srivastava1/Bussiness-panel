@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Service;
 use App\Models\Category;
 use App\Models\SubService;
 use App\Models\ServiceType;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\VendorServiceResource;
-use PhpOffice\PhpSpreadsheet\Calculation\Web\Service;
 
 class VendorServiceController extends Controller
 {

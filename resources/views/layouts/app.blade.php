@@ -47,7 +47,7 @@
     @yield('scripts')
 
 
-    {{-- <script>
+    <script>
         @if (Session::has('message'))
             toastr.options = {
                 "closeButton": true,
@@ -87,7 +87,7 @@
             }
             toastr.warning("{{ session('warning') }}");
         @endif
-    </script> --}}
+    </script>
 
 
     <!-- ================== BEGIN core-js ================== -->
@@ -99,7 +99,25 @@
     <script src="{{ asset('assets/plugins/@highlightjs/cdn-assets/highlight.min.js') }}"></script>
     <script src="{{ asset('assets/js/demo/render.highlight.js') }}"></script>
     <!-- ================== END page-js ================== -->
+     {{-- <script src="{{ asset('zoy-asset/js/jquery.js') }}"></script> --}}
 
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/js/tether.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/vendor/bluemoonNav/bluemoonNav.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/vendor/onoffcanvas/onoffcanvas.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/js/bootstrap.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/js/moment.js') }}"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> --}}
+    <!-- Slimscroll JS -->
+    {{-- <script src="{{ asset('zoy-asset/vendor/slimscroll/slimscroll.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('zoy-asset/vendor/slimscroll/custom-scrollbar.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/lodash.js') }}"></script>
+    <script src="{{ asset('js/validation.js') }}"></script> --}}
+
+
+    <!-- Common JS -->
+    {{-- <script src="{{ asset('zoy-asset/js/common.js') }}"></script> --}}
+    {{-- <script src="{{ asset('business-lib/dashboard/autoload_notify.js') }}"></script> --}}
 </body>
 
 </html>

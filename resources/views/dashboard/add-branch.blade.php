@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('styles')
     <link rel="stylesheet" href="{{ asset('zoy-asset/vendor/bs-select/bs-select.css') }}" />
-    <link rel="stylesheet" href="{{ asset('zoy-asset/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('zoy-asset/css/bootstrap.min.css') }}"> --}}
     <style>
         .form-row .form-group {
             margin-bottom: 25px;
@@ -19,9 +19,13 @@
 
         <div class="col-xl-12">
             <div class="card bg-white">
-                <div class="card-header">Manage Branches <span class="float-right">
+                <div class="card-header d-flex justify-content-between">
+                    Manage Branches
+                    <span class="float-right">
                         <a href="{{ route('vendor.branch') }}" class="btn btn-success">Back</a>
-                    </span></div>
+                    </span>
+                </div>
+
 
                 <div class="card-body">
 
@@ -96,7 +100,7 @@
                                 <label for="inputPassword4" class="col-form-label">Gender Served<span
                                         class="text-danger">*</span></label>
                                 <select name="vendor_type" id="" style="padding:.4rem;"
-                                    class="form-control h-80  rounded-0 outline-none" value="{{ old('vendor_type') }}"
+                                    class="form-select h-80  rounded-0 outline-none" value="{{ old('vendor_type') }}"
                                     required>
                                     <option value="">Gender Served <span class="text-danger">*</span></option>
                                     <option value="Unisex" {{ old('vendor_type') == 'Unisex' ? 'selected' : '' }}>
@@ -140,7 +144,7 @@
                             <div class="col-md-4">
                                 <label for="exampleFormControlSelect2" class="col-form-label">Select Categories
                                 </label>
-                                <select class="form-select" multiple name="category_type[]"
+                                <select class="form-control selectpicker" multiple name="category_type[]"
                                     id="exampleFormControlSelect2">
                                     @if ($category)
                                         @foreach ($category as $item)
@@ -294,7 +298,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <label class="col-form-label">Opening Time <span class="text-danger">*</span></label>
                                 <select name="opening_time" id="opening_time" data-placeholder="FROM"
                                     class="form-select schedule-start h-20" required="">
@@ -327,7 +331,7 @@
                                 </select>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <label for="inputPassword4" class="col-form-label">Closing Time </label>
                                 <select name="closing_time" id="closing_time" data-placeholder="TO"
                                     class="form-control schedule-end h-20" required="">

@@ -1,9 +1,18 @@
 @extends('layouts.app')
+{{-- @extends('business.layouts.common-business-dashboard') --}}
 
+{{-- @section('styles') --}}
 @section('styles')
     <link rel="stylesheet" href="{{ asset('zoy-asset/vendor/datatables/dataTables.bs4.css') }}" />
     <link rel="stylesheet" href="{{ asset('zoy-asset/vendor/datatables/dataTables.bs4-custom.css') }}" />
     <link rel="stylesheet" href="{{ asset('zoy-asset/vendor/datatables/buttons.bs.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('zoy-asset/css/bootstrap.min.css') }}"> --}}
+    <style>
+        .table td {
+            font-size: 13px;
+        }
+    </style>
+    {{-- @endsection --}}
     <style>
         .table td {
             font-size: 13px;
@@ -16,8 +25,6 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="card bg-white">
                 <div class="card-header">Services
-
-
                     @if (empty($edit_permission) || $edit_permission == 'Write')
                         <a href="{{ route('export.vendor.service') }}" class="btn btn-info ml-3 btn-sm rounded">Download
                             Services</a>
@@ -42,7 +49,6 @@
                                     <th>Discount</th>
                                     <th>Discount Valid</th>
                                     <th>Net amount</th>
-                                    {{-- <th>Status</th> --}}
                                     <th>Status | Actions</th>
                                 </tr>
                             </thead>
@@ -78,69 +84,73 @@
 @endsection
 
 @section('scripts')
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('zoy-asset/vendor/datatables/dataTables.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('zoy-asset/vendor/datatables/dataTables.bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('zoy-asset/js/bootstrap.min.js') }}"></script> --}}
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" /> --}}
+
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
 
     <script>
-        $(function() {
-            $('#vendorservices_table').DataTable({
-                // dom: 'Bfrtip',
-                processing: true,
-                serverSide: true,
-                ajax: "{!! route('business.dashboard.services') !!}",
-                // buttons: [
-                // 	'copy', 'csv', 'excel', 'pdf', 'print'
-                // ],
-                columns: [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex'
-                    },
-                    {
-                        data: 'category_or_service_type_name',
-                        name: 'category_or_service_type_name'
-                    },
-                    {
-                        data: 'service_or_package_name',
-                        name: 'service_or_package_name'
-                    },
-                    {
-                        data: 'sub_service_or_package_dis',
-                        name: 'sub_service_or_package_dis'
-                    },
-                    {
-                        data: 'duration',
-                        name: 'duration'
-                    },
-                    {
-                        data: 'available_for',
-                        name: 'available_for'
-                    },
-                    {
-                        data: 'actual_price',
-                        name: 'actual_price'
-                    },
-                    {
-                        data: 'discount',
-                        name: 'discount'
-                    },
-                    {
-                        data: 'discount_valid',
-                        name: 'discount_valid'
-                    },
-                    {
-                        data: 'discount_price',
-                        name: 'discount_price'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false
-                    },
-                ],
-            });
+        // $(function() {
+        let table = new DataTable('#vendorservices_table', {
+            // dom: 'Bfrtip',
+            processing: true,
+            serverSide: true,
+            ajax: "{!! route('business.dashboard.services') !!}",
+            // buttons: [
+            // 	'copy', 'csv', 'excel', 'pdf', 'print'
+            // ],
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                {
+                    data: 'category_or_service_type_name',
+                    name: 'category_or_service_type_name'
+                },
+                {
+                    data: 'service_or_package_name',
+                    name: 'service_or_package_name'
+                },
+                {
+                    data: 'sub_service_or_package_dis',
+                    name: 'sub_service_or_package_dis'
+                },
+                {
+                    data: 'duration',
+                    name: 'duration'
+                },
+                {
+                    data: 'available_for',
+                    name: 'available_for'
+                },
+                {
+                    data: 'actual_price',
+                    name: 'actual_price'
+                },
+                {
+                    data: 'discount',
+                    name: 'discount'
+                },
+                {
+                    data: 'discount_valid',
+                    name: 'discount_valid'
+                },
+                {
+                    data: 'discount_price',
+                    name: 'discount_price'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false
+                },
+            ],
         });
+        // });
 
 
         var service_id;

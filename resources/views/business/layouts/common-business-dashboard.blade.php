@@ -29,6 +29,7 @@
 				margin: 0 auto;
 			}
 		</style>
+
 	</head>
 	<body>
 		<input type="hidden" id="pusher_vendor_id" value="{{ Auth::guard('business')->user()->vendor_id ?? 'UnNamed' }}">
@@ -120,9 +121,9 @@
 		<!-- Common JS -->
 		<script src="{{asset('zoy-asset/js/common.js')}}"></script>
 		<script src="{{asset('business-lib/dashboard/autoload_notify.js')}}"></script>
-		@include('business.layouts.common-notification')
+		{{-- @include('business.layouts.common-notification') --}}
 
-		@yield('scripts')
+		{{-- @yield('scripts') --}}
 
 	</body>
 </html>

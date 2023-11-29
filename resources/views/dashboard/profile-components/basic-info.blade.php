@@ -45,7 +45,7 @@
 
         <div class="col-md  pt-3">
             <label for="services" class="col-form-label">Your Services : <span class="text-danger">*</span> </label>
-            <select multiple required class="form-control selectpicker" name="service_type[]" id="serviceType">
+            <select multiple required class="form-select" name="service_type[]" id="serviceType">
                 @if ($serviceType)
                     @foreach ($serviceType as $item)
                         <option value="{{ $item }}"
@@ -58,7 +58,7 @@
         </div>
         <div class="pt-3 col-md">
             <label for="category_type" class="col-form-label">Select Categories </label>
-            <select class="form-control selectpicker" required multiple name="category_type[]"
+            <select class="form-select" required multiple name="category_type[]"
                 id="exampleFormControlSelect2">
                 @if ($category)
                     @foreach ($category as $item)
